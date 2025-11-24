@@ -3,58 +3,930 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mi sitio</title>
+  <meta name="description" content="Psicóloga Merli - terapia emocional, dependencia afectiva y fortalecimiento interior con sesiones online y recursos formativos." />
+  <title>Merli Psicología | Terapia emocional y autoestima</title>
   <style>
-    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; }
-    body { margin: 0; color: #111; }
-    header { padding: 56px 20px; text-align: center; background: #f5f7fb; }
-    h1 { margin: 0 0 10px; font-size: 2rem; }
-    p.lead { margin: 0; color: #555; }
-    nav { display: flex; gap: 16px; justify-content: center; padding: 12px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top:0; }
-    a { text-decoration: none; color: #0b5bd3; }
-    main { max-width: 980px; margin: 32px auto; padding: 0 20px; }
-    section { margin: 48px 0; }
-    .card { border: 1px solid #eee; border-radius: 12px; padding: 20px; }
-    footer { text-align: center; padding: 40px 20px; color:#666; border-top:1px solid #eee; }
+    :root {
+      --brand: #4d3cff;
+      --brand-dark: #2c217a;
+      --sand: #fdf8f3;
+      --text: #1d1a25;
+      --muted: #5b5568;
+      --stroke: rgba(30,27,42,0.08);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont;
+      color: var(--text);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--sand);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: saturate(140%) blur(10px);
+      background: rgba(253, 248, 243, 0.96);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--brand-dark);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .logo img {
+      height: 46px;
+      width: auto;
+      display: block;
+    }
+
+    .logo span {
+      line-height: 1;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--brand);
+    }
+
+    .primary-btn,
+    .ghost-btn {
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .primary-btn {
+      background: linear-gradient(120deg, var(--brand), #6c63ff);
+      color: #fff;
+      box-shadow: 0 12px 24px rgba(77, 60, 255, 0.2);
+    }
+
+    .ghost-btn {
+      background: transparent;
+      border: 1px solid var(--stroke);
+      color: var(--brand-dark);
+    }
+
+    .primary-btn:hover,
+    .ghost-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 80px 0 60px;
+      background: radial-gradient(circle at right, rgba(77, 60, 255, 0.15), transparent 50%);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 48px;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.6rem);
+      line-height: 1.1;
+      margin: 0 0 20px;
+      color: var(--brand-dark);
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .hero-visual img {
+      width: min(420px, 100%);
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 40px 70px rgba(17, 10, 32, 0.14);
+    }
+
+    .hero-card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+      box-shadow: 0 30px 40px rgba(17, 10, 32, 0.08);
+    }
+
+    .profile-quote {
+      margin-top: 18px;
+      padding: 16px 0 0;
+      border-top: 1px solid var(--stroke);
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(77, 60, 255, 0.1);
+      color: var(--brand-dark);
+      margin-bottom: 16px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 16px;
+    }
+
+    .metric h3 {
+      margin: 4px 0 0;
+      font-size: 1.4rem;
+      color: var(--brand-dark);
+    }
+
+    .metric span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      color: var(--brand-dark);
+    }
+
+    .section p.lead {
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    .cards {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--stroke);
+      min-height: 200px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .therapy-background {
+      position: relative;
+      isolation: isolate;
+      padding: 64px 40px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, #f9f4ff 0%, #fef8f3 50%, #f6fbff 100%);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(15, 12, 36, 0.08);
+    }
+
+    .therapy-background::before {
+      content: "";
+      position: absolute;
+      inset: 12%;
+      border-radius: 40px;
+      background: radial-gradient(circle at top right, rgba(77, 60, 255, 0.08), transparent 55%),
+                  radial-gradient(circle at bottom left, rgba(255, 153, 102, 0.12), transparent 50%);
+      z-index: -2;
+    }
+
+    .therapy-background::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("assets/overlay-terapeutico.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+      mix-blend-mode: soft-light;
+      z-index: -1;
+    }
+
+    .talleres-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .taller-card {
+      background: #fff;
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .taller-card h3 {
+      color: var(--brand-dark);
+      margin-top: 0;
+    }
+
+    .blog-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .blog-list li {
+      padding: 18px 22px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--stroke);
+    }
+
+    .blog-list span {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .programs {
+      background: #fff;
+      border-radius: 32px;
+      padding: 40px;
+      border: 1px solid var(--stroke);
+    }
+
+    .program-card {
+      border-bottom: 1px solid var(--stroke);
+      padding: 24px 0;
+    }
+
+    .program-card:last-child {
+      border-bottom: none;
+    }
+
+    .program-card strong {
+      font-size: 1.1rem;
+      color: var(--brand-dark);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: center;
+    }
+
+    .about-grid p {
+      color: var(--muted);
+    }
+
+    .testimonials {
+      background: #f2eefc;
+      border-radius: 36px;
+      padding: 48px;
+    }
+
+    blockquote {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--brand-dark);
+    }
+
+    blockquote span {
+      display: block;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .resources-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .resource {
+      padding: 24px;
+      border-radius: 18px;
+      border: 1px dashed rgba(77, 60, 255, 0.3);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    pre {
+      margin: 0;
+      padding: 18px;
+      background: #0f0c24;
+      color: #fefefe;
+      border-radius: 18px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    code {
+      font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    }
+
+    .background-design {
+      display: grid;
+      gap: 20px;
+    }
+
+    .background-design .card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--stroke);
+      border-radius: 22px;
+      padding: 24px;
+    }
+
+    .color-swatches {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .swatch {
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(135deg, var(--c1), var(--c2));
+      color: #1f1635;
+    }
+
+    .swatch small {
+      display: block;
+      margin-top: 6px;
+      color: #33294f;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: start;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      font-size: 1rem;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-status {
+      font-size: 0.9rem;
+      color: var(--muted);
+      min-height: 1.2em;
+      margin-top: -4px;
+    }
+
+    .form-status.success {
+      color: #0b8445;
+    }
+
+    .form-status.error {
+      color: #b9373a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .container {
+      width: min(1120px, 90vw);
+      margin: 0 auto;
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-visual img {
+        aspect-ratio: auto;
+      }
+
+      .programs {
+        padding: 28px;
+      }
+
+      .testimonials {
+        padding: 32px;
+      }
+
+      .therapy-background {
+        padding: 40px 24px;
+        border-radius: 24px;
+      }
+
+      .therapy-background::after {
+        opacity: 0.22;
+        background-size: 180%;
+      }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#servicios">Servicios</a>
-    <a href="#portafolio">Portafolio</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <header>
-    <h1>Marca / Empresa</h1>
-    <p class="lead">Subtítulo claro con tu propuesta de valor.</p>
+  <header class="site-nav">
+    <div class="container">
+      <a class="logo" href="#inicio">
+        <img src="assets/logo.svg" alt="Merli Psicología" />
+        <span>Merli Psicología</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#servicios">Acompañamiento</a>
+        <a href="#programas">Programas</a>
+        <a href="#talleres">Talleres</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#blog">Blog</a>
+        <a href="#diseno">Diseño fondo</a>
+        <a href="#consulta">Consulta</a>
+      </nav>
+      <a class="primary-btn" href="#consulta">Agenda una sesión</a>
+    </div>
   </header>
 
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="badge">Rita Merli Saldaña Campos &middot; Psicóloga clínica</p>
+        <h1>Transforma tu bienestar emocional con acompañamiento cálido y basado en evidencia.</h1>
+        <p>Acompaño a niñas, niños, adolescentes, adultos y parejas para fortalecer su autoestima, gestionar la ansiedad y construir vínculos más conscientes. La paz interior sí es posible; demos el primer paso juntas.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#consulta">Reserva tu primera sesión</a>
+          <a class="ghost-btn" href="#programas">Explora mis programas</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/merli.jpg" alt="Merli durante una sesión terapéutica" />
+        <div class="hero-card">
+          <p class="badge">Resultados reales</p>
+          <div class="metrics">
+            <div class="metric">
+              <span>Sesiones guiadas</span>
+              <h3>1500+</h3>
+            </div>
+            <div class="metric">
+              <span>Países</span>
+              <h3>8</h3>
+            </div>
+            <div class="metric">
+              <span>Programas culminados</span>
+              <h3>275</h3>
+            </div>
+            <div class="metric">
+              <span>Eventos y talleres</span>
+              <h3>35</h3>
+            </div>
+          </div>
+          <p style="margin-top:28px;color:var(--muted);">Adaptamos cada sesión a tu ritmo, con ejercicios prácticos y seguimiento cercano para que avances con claridad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <main>
-    <section id="servicios">
-      <h2>Servicios</h2>
-      <div class="card">
-        <p>Describe brevemente lo que ofreces y a quién ayudas.</p>
+    <section class="section" id="servicios">
+      <div class="container">
+        <h2>Acompañamiento terapéutico</h2>
+        <p class="lead">Proceso clínico, humano y cercano para acompañarte en ansiedad, depresión, autoestima, contención emocional y reconexión contigo. Trabajamos con herramientas prácticas, psicoeducación y ejercicios vivenciales.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Consulta psicológica individual</h3>
+            <p>Sesiones 1 a 1 para ordenar emociones, detectar creencias limitantes y diseñar recursos personalizados.</p>
+          </article>
+          <article class="card">
+            <h3>Psicoterapia para adolescentes</h3>
+            <p>Procesos que impulsan el autocontrol, la autoestima y el manejo respetuoso de la cólera.</p>
+          </article>
+          <article class="card">
+            <h3>Psicoterapia infantil</h3>
+            <p>Intervenciones desde el juego, los cuentos y dinámicas creativas para acompañar su maduración emocional.</p>
+          </article>
+          <article class="card">
+            <h3>Terapia de pareja</h3>
+            <p>Espacios seguros para restaurar el diálogo, liberar quejas acumuladas y fortalecer acuerdos cotidianos.</p>
+          </article>
+          <article class="card">
+            <h3>Estimulación temprana</h3>
+            <p>Programas que nutren lenguaje, motricidad y habilidades socioemocionales desde la primera infancia.</p>
+          </article>
+          <article class="card">
+            <h3>Evaluación psicológica</h3>
+            <p>Aplicación de instrumentos como SENA, MACI y pruebas de personalidad para diagnósticos integrales.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="portafolio">
-      <h2>Portafolio</h2>
-      <div class="card">
-        <p>Imágenes / enlaces a tus proyectos (luego podemos maquetar grillas).</p>
+    <section class="section" id="programas">
+      <div class="container programs">
+        <h2>Programas y experiencias</h2>
+        <div class="program-card">
+          <strong>Proceso “Lidera tu bienestar” (12 sesiones)</strong>
+          <p>Ruta personalizada con sesiones clínicas, journaling terapéutico y seguimiento por correo entre encuentros.</p>
+        </div>
+        <div class="program-card">
+          <strong>Programa adolescentes “Pulso”</strong>
+          <p>Entrenamiento emocional de 8 semanas para gestionar la ansiedad, fortalecer la identidad y mejorar la convivencia.</p>
+        </div>
+        <div class="program-card">
+          <strong>Kit Familias Presentes</strong>
+          <p>Acompañamiento híbrido (sesiones + talleres cortos) para madres, padres y cuidadores que desean guiar desde la empatía.</p>
+        </div>
       </div>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <div class="card">
-        <p>Email: <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/5199999999" target="_blank" rel="noopener">Escríbeme</a></p>
+    <section class="section" id="talleres">
+      <div class="container">
+        <h2>Talleres y conferencias</h2>
+        <p class="lead">Experiencias vivenciales y conferencias que he facilitado para instituciones educativas, empresas, UGEL 02 y comunidades familiares. Cada propuesta se personaliza según el público.</p>
+        <div class="talleres-grid">
+          <article class="taller-card">
+            <h3>Huellas que Inspiran</h3>
+            <p>Liderazgo y motivación transformadora para directivos y líderes educativos.</p>
+          </article>
+          <article class="taller-card">
+            <h3>Padres Presentes</h3>
+            <p>Taller vivencial para mamás y papás sobre conexión emocional y acompañamiento respetuoso.</p>
+          </article>
+          <article class="taller-card">
+            <h3>Escucha Activa</h3>
+            <p>Dinámica para padres y docentes que desean cultivar empatía como gesto de amor.</p>
+          </article>
+          <article class="taller-card">
+            <h3>Las Hormonas de la Felicidad</h3>
+            <p>Sesión práctica para colaboradores, enfocada en hábitos que elevan el bienestar.</p>
+          </article>
+          <article class="taller-card">
+            <h3>Gestión del Estrés y Motivación</h3>
+            <p>Workshop para instituciones que buscan prevenir el burnout y recuperar la energía del equipo.</p>
+          </article>
+        </div>
+        <div class="hero-actions" style="margin-top:32px;">
+          <a class="ghost-btn" href="#consulta">Solicitar taller</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div>
+          <img src="assets/merli.jpg" alt="Merli en consulta" loading="lazy" />
+        </div>
+        <div>
+          <h2>Hola, soy Merli</h2>
+          <p>Soy Rita Merli Saldaña Campos, psicóloga clínica con experiencia en procesos emocionales para niñas, niños, adolescentes, adultos y parejas. Me he formado en psicología educativa, liderazgo y recursos terapéuticos basados en evidencia.</p>
+          <p>He acompañado a instituciones como UGEL 02, academias y centros de salud con talleres de desarrollo personal, emocional y liderazgo. Mi propósito es ayudarte a reconectar contigo, cultivar autoestima sólida y elegir relaciones más conscientes.</p>
+          <p>Trabajo desde Lima con modalidad online y presencial bajo solicitud. En cada encuentro utilizaremos psicoeducación, dinámicas vivenciales y rituales que devuelven calma al cuerpo.</p>
+          <p class="profile-quote">“Liderarse a uno mismo es la mayor de las victorias.” — Platón</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonios">
+      <div class="container testimonials">
+        <h2>Testimonios</h2>
+        <blockquote>
+          “Desde la primera sesión sentí mucha calma y claridad. Pude ordenar mis pensamientos y entender mis emociones.”
+          <span>- Cliente individual</span>
+        </blockquote>
+        <blockquote style="margin-top:32px;">
+          “Las dinámicas emocionales ayudaron mucho a mi hijo de 13 años; hoy tiene más herramientas para comunicar lo que siente.”
+          <span>- Mamá de adolescente</span>
+        </blockquote>
+        <blockquote style="margin-top:32px;">
+          “El taller de liderazgo transformó la manera en que nuestros directivos se miran y acompañan a sus equipos.”
+          <span>- Dirección educativa</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="recursos">
+      <div class="container">
+        <div class="therapy-background">
+          <h2>Recursos para ti</h2>
+          <div class="resources-grid">
+            <div class="resource">
+              <h3>Newsletter “Elegirte”</h3>
+              <p>Reflexiones semanales, ejercicios y cartas terapéuticas que llegan directo a tu correo.</p>
+            </div>
+            <div class="resource">
+              <h3>Podcast “Habitarnos”</h3>
+              <p>Conversaciones íntimas sobre vínculos, cuidado propio y espiritualidad práctica.</p>
+            </div>
+            <div class="resource">
+              <h3>Descargables</h3>
+              <p>Cuadernos de journaling, mapas emocionales y meditaciones guiadas para complementar tu proceso.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="blog">
+      <div class="container">
+        <h2>Blog & psicoeducación</h2>
+        <p class="lead">Artículos y guías para seguir cultivando el bienestar emocional entre sesiones.</p>
+        <ul class="blog-list">
+          <li>
+            <span>Autoestima</span>
+            La receta de la felicidad: microhábitos y preguntas que sostienen tu autoconfianza.
+          </li>
+          <li>
+            <span>Adolescentes</span>
+            Cómo manejar la cólera en adolescentes sin perder la conexión.
+          </li>
+          <li>
+            <span>Familias</span>
+            Límites emocionales para padres presentes y amorosos.
+          </li>
+          <li>
+            <span>Adultos</span>
+            Autoestima para adultos que desean volver a elegirse.
+          </li>
+          <li>
+            <span>Motivación</span>
+            Motivación que inspira: claves para sostener el propósito en tu día a día.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="diseno">
+      <div class="container">
+        <h2>Diseño CSS para un fondo terapéutico</h2>
+        <p class="lead">Inspírate con este fondo minimalista, suave y profesional. Puedes usarlo en secciones específicas envolviéndolas en la clase <code>therapy-background</code>.</p>
+        <div class="background-design">
+          <div class="card">
+            <h3>CSS completo</h3>
+            <pre><code>.therapy-background {
+  position: relative;
+  isolation: isolate;
+  padding: 64px 24px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #f9f4ff 0%, #fef8f3 50%, #f6fbff 100%);
+  overflow: hidden;
+}
+
+.therapy-background::before {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border-radius: 40px;
+  background: radial-gradient(circle at top right, rgba(77, 60, 255, 0.08), transparent 55%),
+              radial-gradient(circle at bottom left, rgba(255, 153, 102, 0.12), transparent 50%);
+  filter: blur(0px);
+  z-index: -2;
+}
+
+.therapy-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/overlay-terapeutico.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  z-index: -1;
+}
+</code></pre>
+          </div>
+
+          <div class="card">
+            <h3>Alternativas de color</h3>
+            <div class="color-swatches">
+              <div class="swatch" style="--c1:#f4ecff;--c2:#fef9f2;">
+                Calma Lavanda
+                <small>Bienestar femenino, combinación lavanda + crema.</small>
+              </div>
+              <div class="swatch" style="--c1:#f2f9f6;--c2:#fff9f1;">
+                Verde Salvia
+                <small>Perfecto para mensajes corporales o talleres.</small>
+              </div>
+              <div class="swatch" style="--c1:#fef7fb;--c2:#f4f6ff;">
+                Rosa cuarzo
+                <small>Ideal para comunicar contención y afecto.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>¿Dónde colocar la imagen?</h3>
+            <p>Guarda tu textura u overlay suave en <code>assets/overlay-terapeutico.png</code>. Puede ser un patrón en PNG (transparente) de 1200&nbsp;px como mínimo para que no pierda calidad al cubrir pantallas grandes.</p>
+            <p class="note">Si prefieres otro nombre o varias texturas, manténlas dentro de <code>/assets</code> y actualiza la ruta del CSS según sea necesario.</p>
+          </div>
+
+          <div class="card">
+            <h3>Versión mobile optimizada</h3>
+            <pre><code>@media (max-width: 640px) {
+  .therapy-background {
+    padding: 42px 18px;
+    border-radius: 24px;
+    background: linear-gradient(160deg, #fefcff, #fef7f0);
+  }
+
+  .therapy-background::after {
+    opacity: 0.22;
+    background-size: 180%;
+  }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="consulta">
+      <div class="container contact-grid">
+        <div>
+          <h2>Agendemos tu primera sesión</h2>
+          <p>Sesiones online vía Zoom y presencial bajo solicitud en Lima, Perú. Duración: 60 minutos por sesión.</p>
+          <p><strong>Email:</strong> <a href="mailto:merlipsicologa@gmail.com">merlipsicologa@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/51987654321" target="_blank" rel="noopener">+51 987 654 321</a></p>
+          <p><strong>Ubicación:</strong> Lima, Perú &middot; Modalidad online y presencial</p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/merlipsicologia" target="_blank" rel="noopener">@merlipsicologia</a></p>
+        </div>
+        <form id="contact-form">
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <div>
+            <label for="nombre">Tu nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" required />
+          </div>
+          <div>
+            <label for="email">Correo</label>
+            <input id="email" name="email" type="email" placeholder="correo@ejemplo.com" required />
+          </div>
+          <div>
+            <label for="mensaje">¿Qué necesitas hoy?</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntame brevemente tu situación" required></textarea>
+          </div>
+          <button type="submit" class="primary-btn" style="width:max-content;">Enviar solicitud</button>
+          <div class="form-status" id="form-status" aria-live="polite"></div>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer>© <span id="y"></span> Tu marca. Todos los derechos reservados.</footer>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <footer>
+    &copy; <span id="year"></span> Merli Psicología. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm && formStatus) {
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+        formStatus.textContent = 'Enviando...';
+        formStatus.classList.remove('success', 'error');
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/merlipsicologa@gmail.com', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json'
+            },
+            body: new FormData(contactForm)
+          });
+
+          if (!response.ok) {
+            throw new Error('Error en el envío');
+          }
+
+          formStatus.textContent = 'Gracias por tu mensaje. Te responderé a la brevedad.';
+          formStatus.classList.add('success');
+          contactForm.reset();
+        } catch (error) {
+          console.error(error);
+          formStatus.textContent = 'No se pudo enviar. Escríbeme a merlipsicologa@gmail.com o vía WhatsApp.';
+          formStatus.classList.add('error');
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>

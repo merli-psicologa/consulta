@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi sitio</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu; }
+    body { margin: 0; color: #111; }
+    header { padding: 56px 20px; text-align: center; background: #f5f7fb; }
+    h1 { margin: 0 0 10px; font-size: 2rem; }
+    p.lead { margin: 0; color: #555; }
+    nav { display: flex; gap: 16px; justify-content: center; padding: 12px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top:0; }
+    a { text-decoration: none; color: #0b5bd3; }
+    main { max-width: 980px; margin: 32px auto; padding: 0 20px; }
+    section { margin: 48px 0; }
+    .card { border: 1px solid #eee; border-radius: 12px; padding: 20px; }
+    footer { text-align: center; padding: 40px 20px; color:#666; border-top:1px solid #eee; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <header>
+    <h1>Marca / Empresa</h1>
+    <p class="lead">Subtítulo claro con tu propuesta de valor.</p>
+  </header>
+
+  <main>
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <div class="card">
+        <p>Describe brevemente lo que ofreces y a quién ayudas.</p>
+      </div>
+    </section>
+
+    <section id="portafolio">
+      <h2>Portafolio</h2>
+      <div class="card">
+        <p>Imágenes / enlaces a tus proyectos (luego podemos maquetar grillas).</p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/51XXXXXXXXX" target="_blank" rel="noopener">Escríbeme</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Tu marca. Todos los derechos reservados.</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

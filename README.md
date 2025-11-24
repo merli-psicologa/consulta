@@ -14,6 +14,11 @@ Landing profesional para Rita Merli Saldaña Campos, psicóloga clínica. Estruc
 3) Prueba localmente abriendo `index.html` en el navegador.
 4) Publica en GitHub Pages desde la rama `main` (Configuración → Pages → carpeta raíz).
 
+## Contenidos editables para Merli
+- Abre y edita `content.json` con cualquier editor de texto en tu computadora. Allí están títulos, párrafos, métricas, servicios, programas, testimonios, blog y datos de contacto.
+- Guarda el archivo y vuelve a abrir `index.html` en el navegador para ver los cambios.
+- Si quieres compartir los cambios, envía el archivo `content.json` actualizado.
+
 ## Notas
 - Formulario: usa FormSubmit con destino `merlipsicologa@gmail.com`. Envía una prueba y confirma el correo la primera vez.
 - SEO: incluye meta descripción y Open Graph. Ajusta `og:url` si cambias el dominio.

@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "eyebrow": "Rita Merli Saldaña Campos · Psicóloga clínica",
+    "title": "Recupera claridad emocional, autoestima y relaciones sanas con acompañamiento cálido y basado en evidencia.",
+    "lead": "Procesos terapéuticos para niñas, niños, adolescentes, adultos y parejas. Sesiones online y presenciales en Lima con seguimiento cercano y herramientas que aterrizan en tu día a día.",
+    "pills": ["Ansiedad y depresión", "Autoestima", "Parejas y vínculos", "Familias y adolescentes"],
+    "ctaPrimary": "Agendar sesión",
+    "ctaSecondary": "Ver programas"
+  },
+  "metrics": [
+    { "label": "Sesiones guiadas", "value": "1500+" },
+    { "label": "Países", "value": "8" },
+    { "label": "Programas culminados", "value": "275" },
+    { "label": "Talleres y eventos", "value": "35" }
+  ],
+  "services": [
+    { "title": "Consulta individual", "desc": "Sesiones 1:1 para ordenar emociones, reencuadrar creencias y construir recursos personalizados." },
+    { "title": "Psicoterapia adolescentes", "desc": "Autocontrol, autoestima y gestión respetuosa de la cólera con ejercicios vivenciales." },
+    { "title": "Psicoterapia infantil", "desc": "Trabajo desde el juego, cuentos y dinámicas creativas para su maduración emocional." },
+    { "title": "Terapia de pareja", "desc": "Espacios seguros para restaurar el diálogo, liberar quejas acumuladas y crear acuerdos." },
+    { "title": "Estimulación temprana", "desc": "Programas para nutrir lenguaje, motricidad y habilidades socioemocionales." },
+    { "title": "Evaluación psicológica", "desc": "Aplicación de instrumentos (SENA, MACI, personalidad) para diagnósticos integrales." }
+  ],
+  "programs": [
+    { "title": "Lidera tu bienestar · 12 sesiones", "desc": "Ruta personalizada con psicoeducación, journaling terapéutico y seguimiento por correo." },
+    { "title": "Pulso · Adolescentes", "desc": "8 semanas para gestionar ansiedad, fortalecer identidad y mejorar convivencia familiar." },
+    { "title": "Kit Familias Presentes", "desc": "Acompañamiento híbrido (sesiones + talleres) para madres, padres y cuidadores empáticos." },
+    { "title": "Talleres corporativos", "desc": "Prevención de burnout, comunicación consciente y bienestar emocional en equipos." }
+  ],
+  "about": {
+    "title": "Sobre mí",
+    "paragraphs": [
+      "Soy Rita Merli Saldaña Campos, psicóloga clínica con experiencia en procesos emocionales para niñas, niños, adolescentes, adultos y parejas. Me he formado en psicología educativa, liderazgo y recursos terapéuticos basados en evidencia.",
+      "He acompañado a instituciones como UGEL 02, academias y centros de salud con talleres de desarrollo personal, emocional y liderazgo. Trabajo desde Lima con modalidad online y presencial bajo solicitud."
+    ],
+    "quote": "“Liderarse a uno mismo es la mayor de las victorias.” — Platón"
+  },
+  "testimonials": [
+    { "text": "Desde la primera sesión sentí calma y claridad. Pude ordenar mis pensamientos y entender mis emociones.", "author": "Cliente individual" },
+    { "text": "Las dinámicas ayudaron mucho a mi hijo de 13 años; hoy comunica lo que siente con más herramientas.", "author": "Mamá de adolescente" },
+    { "text": "El taller de liderazgo transformó la manera en que nuestros directivos acompañan a sus equipos.", "author": "Dirección educativa" }
+  ],
+  "resources": [
+    { "title": "Newsletter “Elegirte”", "desc": "Reflexiones, ejercicios y cartas terapéuticas directo a tu correo." },
+    { "title": "Podcast “Habitarnos”", "desc": "Conversaciones sobre vínculos, autocuidado y espiritualidad práctica." },
+    { "title": "Descargables", "desc": "Cuadernos de journaling, mapas emocionales y meditaciones guiadas." }
+  ],
+  "blog": [
+    { "tag": "Autoestima", "title": "La receta de la felicidad: microhábitos que sostienen tu autoconfianza." },
+    { "tag": "Adolescentes", "title": "Cómo manejar la cólera sin perder la conexión." },
+    { "tag": "Familias", "title": "Límites emocionales para padres presentes y amorosos." },
+    { "tag": "Adultos", "title": "Autoestima para adultos que desean volver a elegirse." },
+    { "tag": "Motivación", "title": "Motivación que inspira: claves para sostener el propósito diario." }
+  ],
+  "cta": {
+    "title": "¿Quieres recibir las novedades?",
+    "desc": "Suscríbete a la lista “Elegirte” y recibe herramientas breves cada semana.",
+    "button": "Unirme a la lista"
+  },
+  "contact": {
+    "title": "Agendemos tu primera sesión",
+    "desc": "Sesiones online vía Zoom y presencial bajo solicitud en Lima. Duración: 60 minutos.",
+    "email": "merlipsicologa@gmail.com",
+    "whatsapp": "+51 987 654 321",
+    "whatsappLink": "https://wa.me/51987654321",
+    "location": "Lima, Perú · Modalidad online y presencial",
+    "instagram": "@merlipsicologia",
+    "instagramLink": "https://www.instagram.com/merlipsicologia"
+  }
+}

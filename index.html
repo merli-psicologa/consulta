@@ -38,41 +38,24 @@
   <section class="hero" id="inicio">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Rita Merli Saldaña Campos · Psicóloga clínica</div>
-        <h1>Recupera claridad emocional, autoestima y relaciones sanas con acompañamiento cálido y basado en evidencia.</h1>
-        <p class="lead">Procesos terapéuticos para niñas, niños, adolescentes, adultos y parejas. Sesiones online y presenciales en Lima con seguimiento cercano y herramientas que aterrizan en tu día a día.</p>
-        <div class="pill-row">
+        <div class="eyebrow" id="hero-eyebrow">Rita Merli Saldaña Campos · Psicóloga clínica</div>
+        <h1 id="hero-title">Recupera claridad emocional, autoestima y relaciones sanas con acompañamiento cálido y basado en evidencia.</h1>
+        <p class="lead" id="hero-lead">Procesos terapéuticos para niñas, niños, adolescentes, adultos y parejas. Sesiones online y presenciales en Lima con seguimiento cercano y herramientas que aterrizan en tu día a día.</p>
+        <div class="pill-row" id="hero-pills">
           <span class="pill">Ansiedad y depresión</span>
           <span class="pill">Autoestima</span>
           <span class="pill">Parejas y vínculos</span>
           <span class="pill">Familias y adolescentes</span>
         </div>
         <div class="hero-actions" style="margin-top:24px;">
-          <a class="btn btn-primary" href="#consulta">Agendar sesión</a>
-          <a class="btn btn-ghost" href="#programas">Ver programas</a>
+          <a class="btn btn-primary" href="#consulta" id="hero-cta-primary">Agendar sesión</a>
+          <a class="btn btn-ghost" href="#programas" id="hero-cta-secondary">Ver programas</a>
         </div>
       </div>
       <div class="hero-visual">
         <img class="hero-photo" src="assets/merli.jpg" alt="Rita Merli Saldaña en consulta" />
         <div class="stat-card">
-          <div class="stat-grid">
-            <div class="stat">
-              <h3>1500+</h3>
-              <span>Sesiones guiadas</span>
-            </div>
-            <div class="stat">
-              <h3>8</h3>
-              <span>Países</span>
-            </div>
-            <div class="stat">
-              <h3>275</h3>
-              <span>Programas culminados</span>
-            </div>
-            <div class="stat">
-              <h3>35</h3>
-              <span>Talleres y eventos</span>
-            </div>
-          </div>
+          <div class="stat-grid" id="metrics"></div>
         </div>
       </div>
     </div>
@@ -83,56 +66,14 @@
       <div class="container">
         <h2>Servicios clínicos</h2>
         <p class="lead">Acompañamiento humano y práctico para atravesar ansiedad, depresión, dependencia, duelos, crianza y vínculos de pareja.</p>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Consulta individual</h3>
-            <p>Sesiones 1:1 para ordenar emociones, reencuadrar creencias y construir recursos personalizados.</p>
-          </article>
-          <article class="card">
-            <h3>Psicoterapia adolescentes</h3>
-            <p>Autocontrol, autoestima y gestión respetuosa de la cólera con ejercicios vivenciales.</p>
-          </article>
-          <article class="card">
-            <h3>Psicoterapia infantil</h3>
-            <p>Trabajo desde el juego, cuentos y dinámicas creativas para su maduración emocional.</p>
-          </article>
-          <article class="card">
-            <h3>Terapia de pareja</h3>
-            <p>Espacios seguros para restaurar el diálogo, liberar quejas acumuladas y crear acuerdos.</p>
-          </article>
-          <article class="card">
-            <h3>Estimulación temprana</h3>
-            <p>Programas para nutrir lenguaje, motricidad y habilidades socioemocionales.</p>
-          </article>
-          <article class="card">
-            <h3>Evaluación psicológica</h3>
-            <p>Aplicación de instrumentos (SENA, MACI, personalidad) para diagnósticos integrales.</p>
-          </article>
-        </div>
+        <div class="card-grid" id="services-list"></div>
       </div>
     </section>
 
     <section class="section" id="programas">
       <div class="container">
         <h2>Programas y experiencias</h2>
-        <div class="programs">
-          <div class="program">
-            <strong>Lidera tu bienestar · 12 sesiones</strong>
-            <p>Ruta personalizada con psicoeducación, journaling terapéutico y seguimiento por correo.</p>
-          </div>
-          <div class="program">
-            <strong>Pulso · Adolescentes</strong>
-            <p>8 semanas para gestionar ansiedad, fortalecer identidad y mejorar convivencia familiar.</p>
-          </div>
-          <div class="program">
-            <strong>Kit Familias Presentes</strong>
-            <p>Acompañamiento híbrido (sesiones + talleres) para madres, padres y cuidadores empáticos.</p>
-          </div>
-          <div class="program">
-            <strong>Talleres corporativos</strong>
-            <p>Prevención de burnout, comunicación consciente y bienestar emocional en equipos.</p>
-          </div>
-        </div>
+        <div class="programs" id="programs-list"></div>
       </div>
     </section>
 
@@ -142,10 +83,12 @@
           <img src="assets/merli.jpg" alt="Rita Merli Saldaña en consulta" loading="lazy" />
         </div>
         <div>
-          <h2>Sobre mí</h2>
-          <p>Soy Rita Merli Saldaña Campos, psicóloga clínica con experiencia en procesos emocionales para niñas, niños, adolescentes, adultos y parejas. Me he formado en psicología educativa, liderazgo y recursos terapéuticos basados en evidencia.</p>
-          <p>He acompañado a instituciones como UGEL 02, academias y centros de salud con talleres de desarrollo personal, emocional y liderazgo. Trabajo desde Lima con modalidad online y presencial bajo solicitud.</p>
-          <p class="quote">“Liderarse a uno mismo es la mayor de las victorias.” — Platón</p>
+          <h2 id="about-title">Sobre mí</h2>
+          <div id="about-paragraphs">
+            <p>Soy Rita Merli Saldaña Campos, psicóloga clínica con experiencia en procesos emocionales para niñas, niños, adolescentes, adultos y parejas. Me he formado en psicología educativa, liderazgo y recursos terapéuticos basados en evidencia.</p>
+            <p>He acompañado a instituciones como UGEL 02, academias y centros de salud con talleres de desarrollo personal, emocional y liderazgo. Trabajo desde Lima con modalidad online y presencial bajo solicitud.</p>
+          </div>
+          <p class="quote" id="about-quote">“Liderarse a uno mismo es la mayor de las victorias.” — Platón</p>
         </div>
       </div>
     </section>
@@ -153,20 +96,7 @@
     <section class="section" id="testimonios">
       <div class="container">
         <h2>Testimonios</h2>
-        <div class="testimonials">
-          <div class="testimonial">
-            “Desde la primera sesión sentí calma y claridad. Pude ordenar mis pensamientos y entender mis emociones.”
-            <span>Cliente individual</span>
-          </div>
-          <div class="testimonial">
-            “Las dinámicas ayudaron mucho a mi hijo de 13 años; hoy comunica lo que siente con más herramientas.”
-            <span>Mamá de adolescente</span>
-          </div>
-          <div class="testimonial">
-            “El taller de liderazgo transformó la manera en que nuestros directivos acompañan a sus equipos.”
-            <span>Dirección educativa</span>
-          </div>
-        </div>
+        <div class="testimonials" id="testimonials-list"></div>
       </div>
     </section>
 
@@ -175,20 +105,7 @@
         <div class="therapy-background">
           <div class="resources">
             <h2>Recursos para ti</h2>
-            <div class="resources-grid">
-              <div>
-                <h3>Newsletter “Elegirte”</h3>
-                <p>Reflexiones, ejercicios y cartas terapéuticas directo a tu correo.</p>
-              </div>
-              <div>
-                <h3>Podcast “Habitarnos”</h3>
-                <p>Conversaciones sobre vínculos, autocuidado y espiritualidad práctica.</p>
-              </div>
-              <div>
-                <h3>Descargables</h3>
-                <p>Cuadernos de journaling, mapas emocionales y meditaciones guiadas.</p>
-              </div>
-            </div>
+            <div class="resources-grid" id="resources-list"></div>
           </div>
         </div>
       </div>
@@ -198,20 +115,14 @@
       <div class="container">
         <h2>Blog & psicoeducación</h2>
         <p class="lead">Artículos y guías para seguir cultivando el bienestar entre sesiones.</p>
-        <ul class="blog-list">
-          <li><span>Autoestima</span>La receta de la felicidad: microhábitos que sostienen tu autoconfianza.</li>
-          <li><span>Adolescentes</span>Cómo manejar la cólera sin perder la conexión.</li>
-          <li><span>Familias</span>Límites emocionales para padres presentes y amorosos.</li>
-          <li><span>Adultos</span>Autoestima para adultos que desean volver a elegirse.</li>
-          <li><span>Motivación</span>Motivación que inspira: claves para sostener el propósito diario.</li>
-        </ul>
+        <ul class="blog-list" id="blog-list"></ul>
         <div class="cta">
           <div>
-            <h3 style="margin:0 0 6px;">¿Quieres recibir las novedades?</h3>
-            <p>Suscríbete a la lista “Elegirte” y recibe herramientas breves cada semana.</p>
+            <h3 style="margin:0 0 6px;" id="cta-title">¿Quieres recibir las novedades?</h3>
+            <p id="cta-desc">Suscríbete a la lista “Elegirte” y recibe herramientas breves cada semana.</p>
           </div>
           <div>
-            <a class="btn btn-ghost" href="#consulta" style="background: rgba(255,255,255,0.18); color:#fff; border:1px solid rgba(255,255,255,0.3);">Unirme a la lista</a>
+            <a class="btn btn-ghost" href="#consulta" style="background: rgba(255,255,255,0.18); color:#fff; border:1px solid rgba(255,255,255,0.3);" id="cta-button">Unirme a la lista</a>
           </div>
         </div>
       </div>
@@ -268,12 +179,12 @@
     <section class="section" id="consulta">
       <div class="container contact">
         <div>
-          <h2>Agendemos tu primera sesión</h2>
-          <p>Sesiones online vía Zoom y presencial bajo solicitud en Lima. Duración: 60 minutos.</p>
-          <p><strong>Email:</strong> <a href="mailto:merlipsicologa@gmail.com">merlipsicologa@gmail.com</a></p>
-          <p><strong>WhatsApp:</strong> <a href="https://wa.me/51987654321" target="_blank" rel="noopener">+51 987 654 321</a></p>
-          <p><strong>Ubicación:</strong> Lima, Perú · Modalidad online y presencial</p>
-          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/merlipsicologia" target="_blank" rel="noopener">@merlipsicologia</a></p>
+          <h2 id="contact-title">Agendemos tu primera sesión</h2>
+          <p id="contact-desc">Sesiones online vía Zoom y presencial bajo solicitud en Lima. Duración: 60 minutos.</p>
+          <p><strong>Email:</strong> <a id="contact-email" href="mailto:merlipsicologa@gmail.com">merlipsicologa@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a id="contact-whatsapp" href="https://wa.me/51987654321" target="_blank" rel="noopener">+51 987 654 321</a></p>
+          <p><strong>Ubicación:</strong> <span id="contact-location">Lima, Perú · Modalidad online y presencial</span></p>
+          <p><strong>Instagram:</strong> <a id="contact-instagram" href="https://www.instagram.com/merlipsicologia" target="_blank" rel="noopener">@merlipsicologia</a></p>
         </div>
         <form id="contact-form">
           <input type="hidden" name="_subject" value="Nueva consulta desde la web" />

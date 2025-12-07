@@ -1,0 +1,71 @@
+[
+    {
+        "id": "comunicacion-asertiva",
+        "title": "Comunicación Asertiva",
+        "location": "UGEL 02 - Municipalidad Los Olivos",
+        "description": "Taller enfocado en mejorar la comunicación en equipos de trabajo.",
+        "folder": "assets/FOTOS_TALLERES/TALLER_ Comunicación Asertiva- UGEL 02 - MUNICPALIDAD LOS OLIVOS",
+        "cover": "IMG-20241220-WA0012.jpg",
+        "images": [
+            "IMG-20241220-WA0007.jpg",
+            "IMG-20241220-WA0011.jpg",
+            "IMG-20241220-WA0012.jpg"
+        ]
+    },
+    {
+        "id": "liderazgo-educacion",
+        "title": "El Poder Del Liderazgo en la Educación",
+        "location": "UGEL 02",
+        "description": "Fortaleciendo capacidades de liderazgo en el ámbito educativo.",
+        "folder": "assets/FOTOS_TALLERES/TALLER_ El Poder Del Liderazgo en la Educación - UGEL 02",
+        "cover": "IMG-20241129-WA0023.jpg",
+        "images": [
+            "IMG-20241129-WA0007.jpg",
+            "IMG-20241129-WA0008.jpg",
+            "IMG-20241129-WA0022.jpg",
+            "IMG-20241129-WA0023.jpg"
+        ]
+    },
+    {
+        "id": "escucha-activa",
+        "title": "Escucha Activa",
+        "location": "UGEL 20 - Municipalidad Independencia",
+        "description": "Herramientas para mejorar la escucha y la empatía.",
+        "folder": "assets/FOTOS_TALLERES/TALLER_ Escucha Activa - UGEL 20 - MUNICIPALIDAD INDEPENDENCIA",
+        "cover": "IMG-20241205-WA0011.jpg",
+        "images": [
+            "IMG-20241205-WA0006.jpg",
+            "IMG-20241205-WA0011.jpg"
+        ]
+    },
+    {
+        "id": "autoestima-comas",
+        "title": "Fortaleciendo mi Autoestima",
+        "location": "Parroquia Nuestra Señora de la Paz - Comas",
+        "description": "Espacio de reflexión y crecimiento personal.",
+        "folder": "assets/FOTOS_TALLERES/TALLER_ Fortaleciendo mi Autoestima - Parroquia NUESTRA SEÑORA DE LA PAZ - Comas",
+        "cover": "IMG-20230522-WA0061.jpg",
+        "images": [
+            "IMG-20230522-WA0004.jpg",
+            "IMG-20230522-WA0017.jpg",
+            "IMG-20230522-WA0036.jpg",
+            "IMG-20230522-WA0044.jpg",
+            "IMG-20230522-WA0061.jpg"
+        ]
+    },
+    {
+        "id": "autocuidado",
+        "title": "La Importancia del Autocuidado",
+        "location": "UGEL 02 - Municipalidad Los Olivos",
+        "description": "Taller sobre bienestar personal y prevención del burnout.",
+        "folder": "assets/FOTOS_TALLERES/TALLER_ LA IMPORTANCIA DEL AUTOCUIDADO - UGEL02 - MUNICIPALIDAD LOS OLIVOS",
+        "cover": "IMG-20241203-WA0035.jpg",
+        "images": [
+            "IMG-20241203-WA0005.jpg",
+            "IMG-20241203-WA0009.jpg",
+            "IMG-20241203-WA0012.jpg",
+            "IMG-20241203-WA0029.jpg",
+            "IMG-20241203-WA0035.jpg"
+        ]
+    }
+]

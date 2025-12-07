@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Galería de fotos de los talleres realizados por Merli Psicología." />
+    <meta name="theme-color" content="#5b3df5" />
+    <title>Galería de Talleres | Merli Psicología</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para la galería */
+        .gallery-header {
+            padding: 120px 0 40px;
+            text-align: center;
+            background: var(--bg-soft);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            /* Aspect ratio cuadrado o 4:3 para las miniaturas */
+            aspect-ratio: 4/3;
+        }
+
+        .back-nav {
+            padding: 24px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav">
+        <div class="container nav__inner">
+            <a class="logo" href="index.html#inicio">
+                <img src="assets/logo.svg" alt="Merli Psicología" />
+                <span>Merli Psicología</span>
+            </a>
+            <nav class="nav__links">
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#programas">Programas</a>
+                <a href="index.html#sobre">Sobre mí</a>
+                <a href="index.html#consulta">Agenda</a>
+            </nav>
+            <a class="btn btn-primary" href="index.html#consulta">Agenda una sesión</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="gallery-loading" style="text-align:center; padding: 100px;">Cargando galería...</div>
+
+        <div id="gallery-content" style="display:none;">
+            <section class="gallery-header">
+                <div class="container">
+                    <div class="back-nav">
+                        <a href="index.html#talleres" class="btn btn-ghost">← Volver a Talleres</a>
+                    </div>
+                    <h1 id="gallery-title">Título del Taller</h1>
+                    <p class="lead" id="gallery-description">Descripción del taller.</p>
+                    <p class="meta" id="gallery-location" style="color: var(--text-light); margin-top: 8px;">Ubicación
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="gallery-grid" id="gallery-grid">
+                        <!-- Las imágenes se insertarán aquí dinámicamente -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; <span id="year"></span> Merli Psicología. Todos los derechos reservados.
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  // Carga de Talleres
+  loadWorkshops();
 });
 
 async function loadContent() {
@@ -182,4 +184,117 @@ function setText(id, text) {
   if (!text) return;
   const el = document.getElementById(id);
   if (el) el.textContent = text;
+}
+
+async function loadWorkshops() {
+  const talleresList = document.getElementById('talleres-list');
+  const galleryGrid = document.getElementById('gallery-grid');
+
+  if (!talleresList && !galleryGrid) return;
+
+  try {
+    const res = await fetch('data/talleres.json');
+    if (!res.ok) throw new Error('No se pudo cargar data/talleres.json');
+    const talleres = await res.json();
+
+    if (talleresList) {
+      renderWorkshopsList(talleres, talleresList);
+    }
+
+    if (galleryGrid) {
+      renderWorkshopGallery(talleres, galleryGrid);
+    }
+  } catch (err) {
+    console.error('Error cargando talleres:', err);
+  }
+}
+
+function renderWorkshopsList(talleres, container) {
+  container.innerHTML = '';
+  talleres.forEach(taller => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.style.cursor = 'pointer';
+    card.onclick = (e) => {
+      if (e.target.tagName !== 'A') {
+        window.location.href = `talleres.html?id=${taller.id}`;
+      }
+    };
+
+    // Image Container
+    const imgDiv = document.createElement('div');
+    imgDiv.style.height = '200px';
+    imgDiv.style.borderRadius = '8px';
+    imgDiv.style.overflow = 'hidden';
+    imgDiv.style.marginBottom = '16px';
+
+    // Cover Image
+    const img = document.createElement('img');
+    img.src = `${taller.folder}/${taller.cover}`;
+    img.alt = taller.title;
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'cover';
+    img.style.transition = 'transform 0.3s ease';
+    imgDiv.appendChild(img);
+
+    // Hover effect
+    card.onmouseenter = () => img.style.transform = 'scale(1.05)';
+    card.onmouseleave = () => img.style.transform = 'scale(1)';
+
+    const h3 = document.createElement('h3');
+    h3.textContent = taller.title;
+    h3.style.marginBottom = '8px';
+
+    const p = document.createElement('p');
+    p.textContent = taller.description;
+    p.style.marginBottom = '16px';
+
+    const link = document.createElement('a');
+    link.href = `talleres.html?id=${taller.id}`;
+    link.textContent = 'Ver todas las fotos →';
+    link.style.color = 'var(--primary)';
+    link.style.textDecoration = 'none';
+    link.style.fontWeight = '600';
+    link.style.display = 'inline-block';
+
+    card.append(imgDiv, h3, p, link);
+    container.appendChild(card);
+  });
+}
+
+function renderWorkshopGallery(talleres, container) {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const taller = talleres.find(t => t.id === id);
+
+  if (!taller) {
+    const loadingEl = document.getElementById('gallery-loading');
+    if (loadingEl) loadingEl.textContent = 'Taller no encontrado o ID inválido.';
+    return;
+  }
+
+  setText('gallery-title', taller.title);
+  setText('gallery-description', taller.description);
+  setText('gallery-location', taller.location);
+
+  const loadingEl = document.getElementById('gallery-loading');
+  if (loadingEl) loadingEl.style.display = 'none';
+
+  const contentEl = document.getElementById('gallery-content');
+  if (contentEl) contentEl.style.display = 'block';
+
+  container.innerHTML = '';
+  taller.images.forEach(image => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+
+    const img = document.createElement('img');
+    img.src = `${taller.folder}/${image}`;
+    img.alt = `${taller.title} - Foto`;
+    img.loading = 'lazy';
+
+    item.appendChild(img);
+    container.appendChild(item);
+  });
 }

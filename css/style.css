@@ -257,6 +257,13 @@ img {
   margin: 0 0 32px;
 }
 
+.video-section {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 12px;
+  margin-top: -18px;
+}
+
 .pill-row {
   display: flex;
   flex-wrap: wrap;
@@ -430,7 +437,7 @@ img {
   grid-template-columns: minmax(240px, 0.85fr) minmax(280px, 1.15fr);
   gap: 24px;
   align-items: center;
-  margin: 24px 0 28px;
+  margin: 0;
   padding: 24px;
   border-radius: 22px;
   background: #fff;
@@ -438,11 +445,12 @@ img {
   box-shadow: 0 18px 42px rgba(15, 10, 31, 0.08);
 }
 
-.video-feature__copy h3 {
+.video-feature__copy h2 {
   margin: 14px 0 8px;
   font-family: "Space Grotesk", "Inter", system-ui, sans-serif;
   font-size: 1.55rem;
   line-height: 1.2;
+  color: var(--dark);
 }
 
 .video-feature__copy p {

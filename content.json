@@ -9,9 +9,8 @@
   },
   "metrics": [
     { "label": "Sesiones guiadas", "value": "1500+" },
-    { "label": "Países", "value": "8" },
-    { "label": "Programas culminados", "value": "275" },
-    { "label": "Talleres y eventos", "value": "35" }
+    { "label": "Países", "value": "6" },
+    { "label": "Talleres y eventos", "value": "100+" }
   ],
   "services": [
     { "title": "Consulta individual", "desc": "Sesiones 1:1 para ordenar emociones, reencuadrar creencias y construir recursos personalizados." },
